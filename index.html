@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<!--
+  Portfolio — Ramanandraibe Ernesto Rabutin
+  HTML5 sémantique. Toutes les données proviennent uniquement du CV fourni.
+  Les éléments non renseignés dans le CV sont signalés par la classe .placeholder
+  et un texte "[À compléter]".
+-->
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio d'Ernesto Rabutin, développeur Full-Stack PHP (Laravel, Symfony) et JavaScript (React, Next.js)." />
+  <meta name="author" content="Ramanandraibe Ernesto Rabutin" />
+  <title>Ernesto Rabutin — Développeur Full-Stack</title>
+
+  <!-- Préconnexions pour accélérer le chargement des polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Lien d'évitement pour l'accessibilité clavier -->
+  <a href="#main" class="skip-link">Aller au contenu</a>
+
+  <!-- ============================ NAVIGATION FIXE ============================ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__brand" aria-label="Retour à l'accueil">
+        <span class="nav__mark">ER</span>
+        <span class="nav__brand-text">Ernesto Rabutin</span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Navigation principale">
+        <a href="#about">À propos</a>
+        <a href="#experience">Parcours</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projects">Projets</a>
+        <a href="#education">Formation</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <!-- Bascule de thème clair / sombre -->
+        <button class="theme-toggle" id="themeToggle" type="button"
+                aria-label="Basculer le thème clair ou sombre" aria-pressed="false">
+          <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀</span>
+          <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">☾</span>
+        </button>
+
+        <!-- Menu burger (mobile) -->
+        <button class="nav__burger" id="navBurger" type="button"
+                aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================================ HERO ================================ -->
+    <section class="hero" id="hero">
+      <!-- Grille de coordonnées décorative (aspect « système ») -->
+      <div class="hero__grid" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <p class="eyebrow hero__eyebrow">
+          <span class="eyebrow__dot"></span>Antananarivo, Madagascar — Disponible
+        </p>
+
+        <h1 class="hero__title">
+          Ramanandraibe<br />Ernesto&nbsp;Rabutin
+        </h1>
+
+        <!-- Effet machine à écrire : le suffixe défile sur les technologies réelles du CV -->
+        <p class="hero__role">
+          Développeur Full-Stack
+          <span class="hero__type" id="typewriter" aria-live="polite"></span>
+          <span class="hero__caret" aria-hidden="true"></span>
+        </p>
+
+        <p class="hero__lede">
+          Plus de trois ans d'expérience dans la conception, le développement et la
+          maintenance d'applications web, de l'analyse des besoins au déploiement.
+        </p>
+
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--primary">Voir les projets</a>
+          <a href="#contact" class="btn btn--ghost">Me contacter</a>
+        </div>
+
+        <!-- Métadonnées administratives réelles, traitées en éléments graphiques -->
+        <ul class="hero__meta" aria-label="Informations administratives">
+          <li><span>IM</span>500 186</li>
+          <li><span>Grade</span>Technicien Supérieur — CAT IV 2/1</li>
+          <li><span>Indice</span>665</li>
+        </ul>
+      </div>
+
+      <a href="#about" class="hero__scroll" aria-label="Défiler vers la suite">
+        <span>Défiler</span>
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- =============================== À PROPOS =============================== -->
+    <section class="section" id="about">
+      <div class="section__head reveal">
+        <span class="section__index">00</span>
+        <h2 class="section__title">À propos</h2>
+      </div>
+
+      <div class="about">
+        <div class="about__text reveal">
+          <p class="about__lead">
+            Développeur Full-Stack spécialisé en PHP (Laravel, Symfony), JavaScript
+            (React.js, Next.js) et bases de données relationnelles.
+          </p>
+          <p>
+            Habitué à intervenir sur l'ensemble du cycle de développement, de l'analyse
+            des besoins jusqu'au déploiement, avec une attention particulière portée à la
+            qualité du code, à la sécurité et aux performances.
+          </p>
+
+          <!-- Niveaux de langues (données du CV) -->
+          <div class="langs">
+            <h3 class="langs__title">Langues</h3>
+            <ul class="langs__list">
+              <li>
+                <div class="lang__row"><span>Malgache</span><em>Langue maternelle</em></div>
+                <div class="lang__bar" style="--level: 100%"></div>
+              </li>
+              <li>
+                <div class="lang__row"><span>Français</span><em>Courant</em></div>
+                <div class="lang__bar" style="--level: 80%"></div>
+              </li>
+              <li>
+                <div class="lang__row"><span>Anglais</span><em>Intermédiaire</em></div>
+                <div class="lang__bar" style="--level: 60%"></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Panneau « fiche système » : centres d'intérêt + repères -->
+        <aside class="about__panel reveal">
+          <div class="panel__row"><span>Statut</span>Contractuel — Fonction publique</div>
+          <div class="panel__row"><span>Expérience</span>3 ans et plus</div>
+          <div class="panel__row"><span>Localisation</span>GII 37 BIS, Soamanandrariny</div>
+          <div class="panel__divider" aria-hidden="true"></div>
+          <div class="panel__row panel__row--tags">
+            <span>Centres d'intérêt</span>
+            <div class="tags">
+              <span class="tag">Voyages</span>
+              <span class="tag">Jeux vidéo</span>
+              <span class="tag">Apprentissage continu</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================ TIMELINE / PARCOURS ============================ -->
+    <section class="section" id="experience">
+      <div class="section__head reveal">
+        <span class="section__index">01</span>
+        <h2 class="section__title">Parcours professionnel</h2>
+      </div>
+
+      <ol class="timeline">
+        <!-- Expérience 1 -->
+        <li class="timeline__item reveal">
+          <div class="timeline__marker" aria-hidden="true"></div>
+          <div class="timeline__card">
+            <span class="timeline__date">2024 — Aujourd'hui</span>
+            <h3 class="timeline__role">Développeur Web</h3>
+            <p class="timeline__org">Ministère de l'Enseignement Technique et de la Formation Professionnelle</p>
+            <ul class="timeline__list">
+              <li>Conception, développement et mise en production de plateformes web pour les services du ministère.</li>
+              <li>Maintenance évolutive et corrective des applications existantes, axée fiabilité et sécurité.</li>
+              <li>Collaboration avec les directions métiers pour traduire les besoins en solutions numériques.</li>
+            </ul>
+            <div class="timeline__stack">
+              <span>PHP</span><span>JavaScript</span><span>MySQL</span><span>Git</span>
+            </div>
+          </div>
+        </li>
+
+        <!-- Expérience 2 -->
+        <li class="timeline__item reveal">
+          <div class="timeline__marker" aria-hidden="true"></div>
+          <div class="timeline__card">
+            <span class="timeline__date">2022</span>
+            <h3 class="timeline__role">Développeur Web</h3>
+            <p class="timeline__org">APP'In Technologie</p>
+            <ul class="timeline__list">
+              <li>Conception et développement d'applications web métier avec Laravel.</li>
+              <li>Création d'API REST et d'interfaces responsives orientées expérience utilisateur.</li>
+              <li>Projet majeur — Plateforme HNJM : développement complet, back-office sécurisé et refonte de l'interface.</li>
+            </ul>
+            <div class="timeline__stack">
+              <span>Laravel</span><span>API REST</span><span>Bootstrap</span><span>MySQL</span>
+            </div>
+          </div>
+        </li>
+
+        <!-- Expérience 3 -->
+        <li class="timeline__item reveal">
+          <div class="timeline__marker" aria-hidden="true"></div>
+          <div class="timeline__card">
+            <span class="timeline__date">2021 — 2024</span>
+            <h3 class="timeline__role">Développeur Web — Stagiaire</h3>
+            <p class="timeline__org">Ministère de l'Enseignement Technique et de la Formation Professionnelle</p>
+            <ul class="timeline__list">
+              <li>Participation au développement et à la maintenance des plateformes numériques ministérielles.</li>
+              <li>Maintenance informatique du parc et support aux utilisateurs.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============================== COMPÉTENCES ============================== -->
+    <section class="section" id="skills">
+      <div class="section__head reveal">
+        <span class="section__index">02</span>
+        <h2 class="section__title">Compétences</h2>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card reveal">
+          <h3 class="skill-card__title"><span>01</span>Langages</h3>
+          <ul class="skill-card__list">
+            <li>PHP</li><li>JavaScript</li><li>Python</li><li>HTML5</li><li>CSS3</li>
+          </ul>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3 class="skill-card__title"><span>02</span>Frameworks</h3>
+          <ul class="skill-card__list">
+            <li>Laravel</li><li>Symfony</li><li>CodeIgniter</li><li>Django</li>
+            <li>React.js</li><li>Angular</li><li>Next.js</li><li>React Native</li>
+          </ul>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3 class="skill-card__title"><span>03</span>Bases de données</h3>
+          <ul class="skill-card__list">
+            <li>MySQL</li><li>PostgreSQL</li>
+          </ul>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3 class="skill-card__title"><span>04</span>Outils</h3>
+          <ul class="skill-card__list">
+            <li>Git</li><li>GitHub</li><li>API REST</li><li>Bootstrap</li><li>Postman</li>
+          </ul>
+        </article>
+
+        <article class="skill-card reveal">
+          <h3 class="skill-card__title"><span>05</span>Systèmes &amp; Réseau</h3>
+          <ul class="skill-card__list">
+            <li>Linux</li><li>Windows</li><li>Administration réseau</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- =============================== PROJETS =============================== -->
+    <section class="section" id="projects">
+      <div class="section__head reveal">
+        <span class="section__index">03</span>
+        <h2 class="section__title">Projets</h2>
+      </div>
+
+      <div class="projects">
+        <!-- Projet réel et détaillé dans le CV -->
+        <article class="project-card reveal">
+          <div class="project-card__top">
+            <span class="project-card__tag">APP'In Technologie · 2022</span>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
+          </div>
+          <h3 class="project-card__title">Plateforme HNJM</h3>
+          <p class="project-card__desc">
+            Développement complet, du front-end au back-end : back-office sécurisé
+            (authentification, gestion des utilisateurs et des contenus), optimisation
+            des performances et refonte complète de l'interface utilisateur.
+          </p>
+          <ul class="project-card__stack">
+            <li>Laravel</li><li>API REST</li><li>Bootstrap</li><li>MySQL</li>
+          </ul>
+        </article>
+
+        <!-- Projet réel mais non détaillé dans le CV -->
+        <article class="project-card reveal">
+          <div class="project-card__top">
+            <span class="project-card__tag">Ministère · 2024 — Aujourd'hui</span>
+            <span class="project-card__arrow" aria-hidden="true">↗</span>
+          </div>
+          <h3 class="project-card__title">Plateformes numériques ministérielles</h3>
+          <p class="project-card__desc">
+            Conception, développement et mise en production de plateformes web à
+            destination des services du ministère, avec maintenance évolutive et corrective.
+          </p>
+          <ul class="project-card__stack">
+            <li>PHP</li><li>JavaScript</li><li>MySQL</li><li>Git</li>
+          </ul>
+        </article>
+
+        <!-- Emplacement réservé : à compléter par Ernesto -->
+        <article class="project-card project-card--placeholder reveal">
+          <div class="project-card__top">
+            <span class="project-card__tag placeholder">[À compléter]</span>
+            <span class="project-card__arrow" aria-hidden="true">＋</span>
+          </div>
+          <h3 class="project-card__title placeholder">Projet supplémentaire</h3>
+          <p class="project-card__desc placeholder">
+            Emplacement réservé — aucune donnée fournie dans le CV. Ajoutez ici un titre,
+            une description, un lien de démonstration et le dépôt GitHub associé.
+          </p>
+          <ul class="project-card__stack">
+            <li class="placeholder">Stack…</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================== FORMATION ============================== -->
+    <section class="section" id="education">
+      <div class="section__head reveal">
+        <span class="section__index">04</span>
+        <h2 class="section__title">Formation</h2>
+      </div>
+
+      <ul class="education">
+        <li class="education__item reveal">
+          <span class="education__year">2021</span>
+          <div class="education__body">
+            <h3>Diplôme de Technicien Supérieur en Informatique</h3>
+          </div>
+        </li>
+        <li class="education__item reveal">
+          <span class="education__year">2018</span>
+          <div class="education__body">
+            <h3>Baccalauréat — Série A2</h3>
+          </div>
+        </li>
+        <li class="education__item reveal">
+          <span class="education__year">2013</span>
+          <div class="education__body">
+            <h3>BEPC</h3>
+          </div>
+        </li>
+        <li class="education__item reveal">
+          <span class="education__year">2009</span>
+          <div class="education__body">
+            <h3>CEPE</h3>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- =============================== CONTACT =============================== -->
+    <section class="section" id="contact">
+      <div class="section__head reveal">
+        <span class="section__index">05</span>
+        <h2 class="section__title">Contact</h2>
+      </div>
+
+      <div class="contact reveal">
+        <p class="contact__lead">
+          Une idée de projet, une mission ou une opportunité&nbsp;? Écrivons-nous.
+        </p>
+
+        <div class="contact__grid">
+          <a class="contact__item" href="mailto:ernestorabutin02@gmail.com">
+            <span class="contact__label">Email</span>
+            <span class="contact__value">ernestorabutin02@gmail.com</span>
+          </a>
+          <a class="contact__item" href="tel:+261341258492">
+            <span class="contact__label">Téléphone</span>
+            <span class="contact__value">034 12 584 92</span>
+          </a>
+          <div class="contact__item">
+            <span class="contact__label">Adresse</span>
+            <span class="contact__value">GII 37 BIS, Soamanandrariny</span>
+          </div>
+        </div>
+
+        <div class="contact__socials">
+          <a href="https://www.linkedin.com/in/ernesto-rabutin" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/Rabutin-12" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.malt.fr/profile/ernestorabutin" target="_blank" rel="noopener">Malt ↗</a>
+          <a href="https://comeup.com/fr/@ernestorabutin" target="_blank" rel="noopener">ComeUp ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =============================== FOOTER =============================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__mark">ER</span>
+      <p class="footer__name">Ramanandraibe Ernesto Rabutin</p>
+      <p class="footer__note">Développeur Full-Stack · Laravel · Symfony · Next.js</p>
+      <p class="footer__copy">© <span id="year"></span> — Conçu et développé avec attention.</p>
+    </div>
+  </footer>
+
+  <!-- Bouton « Retour en haut » -->
+  <button class="to-top" id="toTop" type="button" aria-label="Retour en haut">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
